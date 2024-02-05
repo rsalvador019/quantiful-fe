@@ -7,15 +7,14 @@ const ListWidget = ({ widget }) => {
   const [data, setData] = useState();
   const [count, setCount] = useState();
 
-  const fetchData = async () => {
-    const response = await getService(widget.api);
-    setData(response.data.results);
-    setCount(response.data.count);
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      const response = await getService(widget.api);
+      setData(response.data.results);
+      setCount(response.data.count);
+    };
     fetchData();
-  }, []);
+  }, [widget.api]);
 
   return (
     <div class="widget-large">
