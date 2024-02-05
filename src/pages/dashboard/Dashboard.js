@@ -9,7 +9,7 @@ export const Dashboard = ({ client }) => {
   const config = getClientConfig(client);
 
   const renderColumns = () => {
-    return config.columns.map((column, index) => (
+    return config.columns.map((column) => (
       <>
         <div class={`widget-column-${getSize(column.size)}`}>
           <h3>{column.heading}</h3>
@@ -21,14 +21,12 @@ export const Dashboard = ({ client }) => {
 
   // Render widgets based on type
   const renderWidgets = (widgets) => {
-    return widgets.map((widget, index) => {
+    return widgets.map((widget) => {
       switch (widget.type) {
         case 'list':
-          return <ListWidget index={index} widget={widget} />;
+          return <ListWidget widget={widget} />;
         case 'number':
-          return (
-            <NumberWidget index={index} widget={widget} responsePath={'pokemon_species_details'} />
-          );
+          return <NumberWidget widget={widget} responsePath={'pokemon_species_details'} />;
         default:
           return null;
       }
@@ -37,3 +35,5 @@ export const Dashboard = ({ client }) => {
 
   return <div class="dashboard-container">{renderColumns()}</div>;
 };
+
+export default Dashboard;
