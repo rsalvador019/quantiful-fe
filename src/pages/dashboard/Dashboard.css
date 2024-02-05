@@ -1,0 +1,39 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.widget-column-small {
+  width: 20%;
+}
+
+.widget-column-medium {
+  width: 40%;
+}
+
+.widget-column-default {
+  width: 30%;
+}
+
+.vertical-widgets {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .widget-column-medium,
+  .widget-column-small {
+    width: 100%;
+  }
+}

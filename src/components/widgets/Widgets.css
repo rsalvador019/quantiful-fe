@@ -1,0 +1,15 @@
+.widget-large {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 90%;
+}
+
+.widget-small {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  width: 40%;
+  height: 23%;
+}

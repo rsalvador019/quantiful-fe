@@ -4,6 +4,7 @@ export const configurations = {
       {
         // First column
         size: 1, // The size of the column
+        rowType: 'vertical',
         heading: 'General Pokemon information',
         widgets: [
           {
@@ -23,6 +24,7 @@ export const configurations = {
       {
         // Second column
         size: 2, // The size of the column
+        rowType: 'horizontal',
         heading: 'Pokemon counts',
         widgets: [
           {

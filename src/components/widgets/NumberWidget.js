@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { getService } from '../../lib/axios';
 import { get } from 'lodash';
-function NumberWidget({ index, widget, responsePath }) {
+import { Card } from 'antd';
+import './Widgets.css';
+
+const NumberWidget = ({ widget, responsePath }) => {
   const [count, setCount] = useState();
 
   const fetchData = async () => {
@@ -16,10 +19,17 @@ function NumberWidget({ index, widget, responsePath }) {
   }, []);
 
   return (
-    <div key={index}>
-      <h3>{`${widget.title} (${count})`}</h3>
+    <div class="widget-small">
+      <Card
+        style={{
+          height: '100%',
+          maxHeight: 500
+        }}>
+        <h3>{`${widget.title} `}</h3>
+        <h4>{`(${count})`}</h4>
+      </Card>
     </div>
   );
-}
+};
 
 export default NumberWidget;
